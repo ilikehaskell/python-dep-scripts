@@ -16,7 +16,7 @@ Because I lost my mind writing up this commands, I made this aliases:
 `vpoetry` - **v**irtualenv**poetry**; creates a new pyenv virtualenv with the name of the current directory and sets it as local (if there is not already a local virtualenv) and activates the local `pyenv-virtualenv` , after which it runs `poetry` with any arguments you give it.
 
 # Setup
-To use them, put this in your `.zshrc`
+To use these commands, put this in your `.zshrc`
 ```
 eval "$(pyenv init -)"
 alias newpyenv='source new-pyenv-script'
