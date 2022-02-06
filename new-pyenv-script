@@ -1,0 +1,10 @@
+#!/bin/bash
+if [[ $# -eq 0 ]] ; then
+    VNAME=${PWD##*/}
+else
+    VNAME=$1
+fi
+pyenv virtualenv $VNAME 
+pyenv activate $VNAME
+pyenv local $VNAME
+python3 -m pip install -U pip setuptools
