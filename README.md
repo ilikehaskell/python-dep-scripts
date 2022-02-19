@@ -1,6 +1,17 @@
 # python-dep-scripts
 Utility scripts for a smooth Python experience with pyenv and Poetry
 
+# Setup
+To use these commands, put this in your `.zshrc`
+```
+eval "$(pyenv init -)"
+alias newpyenv='source new-pyenv-script'
+alias alpe='source activate-local-pyenv-script'
+alias vpoetry='alpe 2>>/dev/null || newpyenv && poetry'
+```
+
+Put the `new-pyenv-script` and `activate-local-pyenv-script` files on your `PATH`
+
 # Why use pyenv/Poetry?
 `pyenv` lets you easily switch between multiple versions of Python. It has the `pyenv-virtualenv` plugin which manages virtual environments across all Python versions. This means that you will have all your virtual environments regardless of Python version in one place - try `pyenv virtualenvs`. The `alpe` and `newpyenv` commands described in the section below are strictly for pyenv use. [Here's a great pyenv resource](https://realpython.com/intro-to-pyenv).
 
@@ -13,17 +24,6 @@ Utility scripts for a smooth Python experience with pyenv and Poetry
   
 - `vpoetry` - **v**irtualenv**poetry**; creates a new pyenv virtualenv with the name of the current directory and sets it as local (if there is not already a local virtualenv) and activates the local `pyenv-virtualenv` , after which it runs `poetry` with any arguments you give it.
 
-# Setup
-To use these commands, put this in your `.zshrc`
-```
-eval "$(pyenv init -)"
-alias newpyenv='source new-pyenv-script'
-alias alpe='source activate-local-pyenv-script'
-alias vpoetry='alpe 2>>/dev/null || newpyenv && poetry'
-```
-
-Put the `new-pyenv-script` and `activate-local-pyenv-script` files on your `PATH`
-  
 # A normal workflow
   If you would setup a Poetry package with pyenv, you would type something like this:
   ```
